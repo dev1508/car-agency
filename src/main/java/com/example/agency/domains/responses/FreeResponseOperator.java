@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FreeResponseOperator {
@@ -15,5 +16,5 @@ public class FreeResponseOperator {
         this.name = name;
     }
 
-    public List<String> freeTimeSlots;
+    public ArrayList<String> freeTimeSlots;
 }

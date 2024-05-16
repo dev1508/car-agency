@@ -13,12 +13,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Booking {
     @Id
-    private ObjectId id;
+    private String id;
     private Integer startTime;
-    private Integer operator;
+    private String operatorId;
 
-    public Booking(Integer startTime, Integer operator) {
-        this.operator = operator;
+    public Booking(Integer startTime, String operatorId) {
+        this.operatorId = operatorId;
         this.startTime = startTime;
     }
 }

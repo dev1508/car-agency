@@ -25,4 +25,3 @@ public class Operator {
         this.bookedTimeSlots = new ArrayList<>();
     }
 }
-

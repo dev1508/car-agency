@@ -79,11 +79,14 @@ public class OperatorService {
         FreeResponseOperator responseOperator = new FreeResponseOperator(
                 operator.get().getId(), operator.get().getName());
         responseOperator.freeTimeSlots = missingSlots(operator.get().getBookedTimeSlots());
+        if(responseOperator.freeTimeSlots == null) {
+            responseOperator.freeTimeSlots = new ArrayList<>();
+        }
 
         return responseOperator;
     }
 
-    public List<String> missingSlots(List<Integer> bookedSlots) {
+    public ArrayList<String> missingSlots(List<Integer> bookedSlots) {
 
         boolean[] present = new boolean[24];
 
@@ -98,7 +101,7 @@ public class OperatorService {
             }
         }
 
-        List<String> ranges = new ArrayList<>();
+        ArrayList<String> ranges = new ArrayList<>();
         for (int i = 0; i < missingSlots.size(); i++) {
             Integer start = missingSlots.get(i);
             while (i < missingSlots.size() - 1 && missingSlots.get(i+1) == missingSlots.get(i) + 1) {
@@ -106,7 +109,7 @@ public class OperatorService {
             }
             int end = missingSlots.get(i) + 1;
 
-            ranges.add(start.toString() + "-" + Integer.toString(end));
+            ranges.add(start.toString() + "-" + end);
         }
 
         return ranges;
