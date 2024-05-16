@@ -126,6 +126,10 @@ public class BookingService {
         }
         // if no booking exists
 
+        if(request.newStartTime<0 || request.newStartTime>23) {
+            return null;
+        }
+
         Integer previousStartTime = booking.get().getStartTime();
 
         // if startTime of the booking already matches with the newStartTime
@@ -172,7 +176,26 @@ public class BookingService {
             return null;
         }
 
+        Integer previousStartTime = booking.get().getStartTime();
+
         bookingRepository.deleteById(id);
+
+        String operatorId = booking.get().getOperatorId();
+        Optional<Operator> operator = operatorRepository.findById(operatorId);
+        log.info(operator.toString());
+        // operator with the requested id does not exist;
+        if(operator.isEmpty()) {
+            return null;
+        }
+
+        List<Integer> updatedSlotTimes = operator.get().getBookedTimeSlots();
+        updatedSlotTimes.remove(previousStartTime);
+        Collections.sort(updatedSlotTimes);
+
+        mongoTemplate.update(Operator.class)
+                .matching(Criteria.where("id").is(operatorId))
+                .apply(new Update().set("bookedTimeSlots", updatedSlotTimes))
+                .first();
 
         return new UpdateBookingResponse(booking.get().getId(),
                 helper.slot(booking.get().getStartTime(),-1), helper.operatorName(booking.get()), "CANCELLED");
