@@ -1,4 +1,4 @@
-package com.example.agency;
+package com.example.agency.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,21 +7,18 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
-@Document(collection = "operators")
+@Document(collection = "bookings")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Operator {
+public class Booking {
     @Id
     private ObjectId id;
-    private String name;
+    private Integer startTime;
+    private Integer operator;
 
-    public Operator(String name) {
-        this.name = name;
+    public Booking(Integer startTime, Integer operator) {
+        this.operator = operator;
+        this.startTime = startTime;
     }
-
-    private List<Integer> bookedTimeSlots;
 }
-

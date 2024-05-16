@@ -1,14 +1,16 @@
-package com.example.agency;
+package com.example.agency.domains.responses;
 
+import lombok.Builder;
+import lombok.Data;
 import org.bson.types.ObjectId;
 
 import java.util.List;
 
 public class FreeResponseOperator {
-    private ObjectId id;
+    private String id;
     private String name;
 
-    public FreeResponseOperator(ObjectId id, String name) {
+    public FreeResponseOperator(String id, String name) {
         this.id = id;
         this.name = name;
     }

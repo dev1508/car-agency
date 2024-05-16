@@ -1,11 +1,12 @@
-package com.example.agency;
+package com.example.agency.services;
 
+import com.example.agency.entities.Booking;
+import com.example.agency.repositories.BookingRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service

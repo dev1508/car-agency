@@ -1,5 +1,7 @@
-package com.example.agency;
+package com.example.agency.controllers;
 
+import com.example.agency.entities.Booking;
+import com.example.agency.services.BookingService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
