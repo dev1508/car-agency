@@ -25,20 +25,20 @@ public class OperatorController {
         return new ResponseEntity<>(operatorService.allOperators(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}/bookings")
-    public ResponseEntity<ResponseOperator> getOperator(@PathVariable String id) {
-        ResponseOperator responseOperator = operatorService.getOperator(id);
+    @GetMapping("/{type}/{value}/bookings")
+    public ResponseEntity<ResponseOperator> getOperator(@PathVariable String value, @PathVariable String type) {
+        ResponseOperator responseOperator = operatorService.getOperator(value, type);
         if(responseOperator == null) {
-            throw new ResourceNotFoundException("Resource with ID " + id + " not found.");
+            throw new ResourceNotFoundException("Resource with " + type + " " + value + " not found.");
         }
         return new ResponseEntity<>(responseOperator, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}/free")
-    public ResponseEntity<FreeResponseOperator> getFreeTimeForOperator(@PathVariable String id) {
-        FreeResponseOperator freeResponseOperator = operatorService.getFreeTimeForOperator(id);
+    @GetMapping("/{type}/{value}/free")
+    public ResponseEntity<FreeResponseOperator> getFreeTimeForOperator(@PathVariable String value, @PathVariable String type) {
+        FreeResponseOperator freeResponseOperator = operatorService.getFreeTimeForOperator(value, type);
         if(freeResponseOperator == null) {
-            throw new ResourceNotFoundException("Resource with ID " + id + " not found.");
+            throw new ResourceNotFoundException("Resource with " + type + " " + value + " not found.");
         }
         return new ResponseEntity<>(freeResponseOperator, HttpStatus.OK);
     }

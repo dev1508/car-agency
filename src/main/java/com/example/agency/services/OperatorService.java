@@ -54,15 +54,24 @@ public class OperatorService {
     }
 
     // get specific operator details
-    public ResponseOperator getOperator(String id) {
-        Optional<Operator> operator = operatorRepository.findById(id);
-        return operator.map(value -> operatorToResponseOperator.mapToResponseOperator(value)).orElse(null);
+    public ResponseOperator getOperator(String value, String type) {
+        Optional<Operator> operator;
+        if (type.equals("name")) {
+            operator = operatorRepository.findOperatorByName(value);
+        } else {
+            operator = operatorRepository.findById(value);
+        }
+        return operator.map(op -> operatorToResponseOperator.mapToResponseOperator(op)).orElse(null);
     }
 
     // get specific operator free slots
-    public FreeResponseOperator getFreeTimeForOperator(String id) {
-
-        Optional<Operator> operator = operatorRepository.findById(id);
+    public FreeResponseOperator getFreeTimeForOperator(String value, String type) {
+        Optional<Operator> operator;
+        if (type.equals("name")) {
+            operator = operatorRepository.findOperatorByName(value);
+        } else {
+            operator = operatorRepository.findById(value);
+        }
         if(operator.isEmpty()) {
             return null;
         }
@@ -95,9 +104,9 @@ public class OperatorService {
             while (i < missingSlots.size() - 1 && missingSlots.get(i+1) == missingSlots.get(i) + 1) {
                 i++;
             }
-            Integer end = missingSlots.get(i) + 1;
+            int end = missingSlots.get(i) + 1;
 
-            ranges.add(start.toString() + "-" + end.toString());
+            ranges.add(start.toString() + "-" + Integer.toString(end));
         }
 
         return ranges;
