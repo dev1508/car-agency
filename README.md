@@ -1,4 +1,4 @@
-Connect with me on <ins>[LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect")</ins>.
+Connect with me on [LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect").
 
 Hey there!
 <br>
@@ -8,16 +8,17 @@ This is a project having REST apis, made using `Spring boot` framework of `Java`
 
 I have followed this [YouTube Tutorial](https://www.youtube.com/watch?v=5PdEmeopJVQ).
 
+---------------------------------
 > **Tech** used in this project are mentioned below.
 > <li>Spring Boot (Backend)</li>
 > <li>MongoDB (Database)</li>
 > <li>Git (Version Control)</li>
-
+---------------------------------
 > **Tools** you would need are mentioned below.
 > <li>IntelliJ (IDE)</li>
 > <li>Compass (GUI for Database)</li>
 > <li>Postman (Testing APIs)</li>
-
+---------------------------------
 Steps to run this project on your local system are the following.
 
 <ol>
@@ -35,6 +36,7 @@ and pressing the <strong> Run AgencyApplication.java</strong> button.
 <li>Now we can hit the apis in the postman while the application is running.</li>
 </ol>
 
+---------------------------------
 
 > When you create a new db with name <database-name> 
 > on mongoDB, you will receive a
@@ -46,7 +48,7 @@ and pressing the <strong> Run AgencyApplication.java</strong> button.
 > MONGO_USER="<user-name>"<br>
 > MONGO_PASSWORD="<user-password>"<br>
 > MONGO_CLUSTER="<cluster-id>"<br>
-
+---------------------------------
 
 If you tried running this assignment, do let me know by connecting with 
 me over <ins>[LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect")</ins>.
