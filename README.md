@@ -7,6 +7,9 @@ I hope you are doing great.
 This is a project having REST apis, made using `Spring boot` framework of `Java` and `MongoDB` is used for storing the data.
 
 I have followed this [YouTube Tutorial](https://www.youtube.com/watch?v=5PdEmeopJVQ).
+But there are still few things which you may find new in this project. One of them 
+is error handling which was not the part of the tutorial video. Find more by diving 
+into this project.
 
 ---------------------------------
 > **Tech** used in this project are mentioned below.
