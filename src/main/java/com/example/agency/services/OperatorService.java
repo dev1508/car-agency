@@ -1,8 +1,10 @@
 package com.example.agency.services;
 
 import com.example.agency.domains.responses.FreeResponseOperator;
+import com.example.agency.entities.Booking;
 import com.example.agency.entities.Operator;
 import com.example.agency.mappers.OperatorToResponseOperator;
+import com.example.agency.repositories.BookingRepository;
 import com.example.agency.repositories.OperatorRepository;
 import com.example.agency.domains.responses.ResponseOperator;
 import org.slf4j.Logger;
@@ -18,6 +20,9 @@ public class OperatorService {
 
     @Autowired
     private OperatorRepository operatorRepository;
+
+    @Autowired
+    private BookingRepository bookingRepository;
 
     @Autowired
     private OperatorToResponseOperator operatorToResponseOperator;
@@ -49,6 +54,13 @@ public class OperatorService {
         Optional<Operator> operator = operatorRepository.findById(id);
 
         operatorRepository.deleteById(id);
+
+        Optional<List<Booking>> booking = bookingRepository.findBookingByOperatorId(id);
+        if(booking.isPresent()) {
+            for (Booking singleBooking:booking.get()) {
+                bookingRepository.deleteById(singleBooking.getId());
+            }
+        }
 
         return operator.map(value -> operatorToResponseOperator.mapToResponseOperator(value)).orElse(null);
     }
