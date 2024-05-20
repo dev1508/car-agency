@@ -38,20 +38,20 @@ and pressing the <strong> Run AgencyApplication.java</strong> button.
 
 ---------------------------------
 
-> When you create a new db with name <database-name> 
+> When you create a new db with name database-name 
 > on mongoDB, you will receive a
 > new long cluster id which would look like -
-> > mongodb+srv://<user-name>:<user-password>@<cluster-id>
+> > mongodb+srv://user-name:user-password@cluster-id
 > 
 > .env file structure would be like<br>
-> >MONGO_DATABASE="<database-name>"<br>
-> MONGO_USER="<user-name>"<br>
-> MONGO_PASSWORD="<user-password>"<br>
-> MONGO_CLUSTER="<cluster-id>"<br>
+> >MONGO_DATABASE="database-name"<br>
+> MONGO_USER="user-name"<br>
+> MONGO_PASSWORD="user-password"<br>
+> MONGO_CLUSTER="cluster-id"<br>
 ---------------------------------
 
 If you tried running this assignment, do let me know by connecting with 
-me over <ins>[LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect")</ins>.
+me over [LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect").
 <br>
 
 
