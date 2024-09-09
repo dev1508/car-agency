@@ -1,61 +1,87 @@
-Connect with me on [LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect").
+# Spring Boot REST API Project with MongoDB
 
-Hey there!
-<br>
-I hope you are doing great.
+Welcome! This project is a RESTful API built using the **Spring Boot** framework and **MongoDB** as the database. It showcases the implementation of various backend functionalities, including a robust error-handling mechanism not covered in the original tutorial video I followed.
 
-This is a project having REST apis, made using `Spring boot` framework of `Java` and `MongoDB` is used for storing the data.
+This project was developed as part of learning and improving my backend development skills. You can find the tutorial I used as a base [here](https://www.youtube.com/watch?v=5PdEmeopJVQ), but I have expanded on it by adding additional features such as custom error handling.
 
-I have followed this [YouTube Tutorial](https://www.youtube.com/watch?v=5PdEmeopJVQ).
-But there are still few things which you may find new in this project. One of them 
-is error handling which was not the part of the tutorial video. Find more by diving 
-into this project.
+## Technologies Used
 
----------------------------------
-> **Tech** used in this project are mentioned below.
-> <li>Spring Boot (Backend)</li>
-> <li>MongoDB (Database)</li>
-> <li>Git (Version Control)</li>
----------------------------------
-> **Tools** you would need are mentioned below.
-> <li>IntelliJ (IDE)</li>
-> <li>Compass (GUI for Database)</li>
-> <li>Postman (Testing APIs)</li>
----------------------------------
-Steps to run this project on your local system are the following.
+- **Spring Boot** (Backend Framework)
+- **MongoDB** (NoSQL Database)
+- **Git** (Version Control)
 
-<ol>
-<li><strong>Git Clone</strong> the project onto your system.</li>
-<li>In the folder <strong>src/main/resources</strong>, make a file with name <strong>.env</strong>.
-The env file structuring is given below.</li>
-<li>The project can be started by navigating to the file 
-<strong>src/main/java/com/example/agency/AgencyApplication.java
-</strong> <br>
-and pressing the <strong> Run AgencyApplication.java</strong> button.
-</li>
-<li>In case the default port 8080 is already in use, we can set the
-<strong>server.port="a-port-number"</strong> in the <strong>src/main/resources/application.properties</strong> file.
-</li>
-<li>Now we can hit the apis in the postman while the application is running.</li>
-</ol>
+## Tools Required
 
----------------------------------
+To run and test the project, you will need the following tools:
 
-> When you create a new db with name database-name 
-> on mongoDB, you will receive a
-> new long cluster id which would look like -
-> > mongodb+srv://user-name:user-password@cluster-id
-> 
-> .env file structure would be like<br>
-> >MONGO_DATABASE="database-name"<br>
-> MONGO_USER="user-name"<br>
-> MONGO_PASSWORD="user-password"<br>
-> MONGO_CLUSTER="cluster-id"<br>
----------------------------------
+- **IntelliJ IDEA** (Integrated Development Environment)
+- **MongoDB Compass** (Database GUI for managing MongoDB collections)
+- **Postman** (For API testing)
 
-If you tried running this assignment, do let me know by connecting with 
-me over [LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect").
-<br>
+## Getting Started
 
+### Prerequisites
 
-Thanks for your time.
+Ensure you have the following installed on your local system:
+
+- [Java JDK 8 or later](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [MongoDB](https://www.mongodb.com/try/download/community)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+- [Postman](https://www.postman.com/downloads/)
+
+### Installation Steps
+
+1. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/dev1508/car-agency.git
+   cd repo-name
+   ```
+
+2. Create a file named `.env` in the `src/main/resources` directory with the following structure:
+   ```bash
+   MONGO_DATABASE=your-database-name
+   MONGO_USER=your-username
+   MONGO_PASSWORD=your-password
+   MONGO_CLUSTER=your-cluster-id
+   ```
+
+3. **Run the application**:
+    - Navigate to `src/main/java/com/example/agency/AgencyApplication.java` and run the `AgencyApplication` class.
+    - Alternatively, use the terminal:
+      ```bash
+      ./mvnw spring-boot:run
+      ```
+
+4. If port `8080` is in use, modify the port by adding the following line in the `application.properties` file:
+   ```bash
+   server.port=your-port-number
+   ```
+
+5. Use **Postman** to test the available APIs while the application is running.
+
+### MongoDB Setup
+
+To connect to your MongoDB database, you will need to create a new database and cluster. Once set up, MongoDB will provide a connection string that looks like:
+
+```bash
+mongodb+srv://username:password@cluster-id.mongodb.net/database-name
+```
+
+Ensure this information is correctly entered into your `.env` file as shown above.
+
+## API Testing
+
+Use **Postman** to test the various endpoints provided by this API. For more detailed information on available endpoints, check the `src/main/java/com/example/agency/controller` package.
+
+## Additional Features
+
+- **Error Handling**: This project includes custom error-handling mechanisms not covered in the original tutorial.
+- **.env Configuration**: Easily manage environment variables such as database credentials and cluster ID.
+
+## Connect with Me
+
+If you have any questions or would like to discuss this project, feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/dev-vrat-pathak-aa6570176/ "Let's Connect").
+
+---
+
+Thank you for taking the time to check out this project. Your feedback is greatly appreciated!
